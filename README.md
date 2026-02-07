@@ -24,42 +24,45 @@ Ensure you have these installed on your machine:
 
 ## Installation
 
-Choose the method that fits your environment:
+### 🚀 Recommended: Setup on a New Machine
 
-### 🚀 Recommended: Virtual Environment (Works Everywhere)
-This is the safest method for **Windows, macOS, and Linux**. It avoids conflicts and the "externally-managed-environment" error on modern Linux.
+**1. Clone the repository:**
+```bash
+git clone https://github.com/mahupreti/repochat.git
+cd repochat
+```
 
-1.  **Clone the Repo**:
-    ```bash
-    git clone https://github.com/mahupreti/repochat.git
-    cd repochat
-    ```
-
-2.  **Activate Environment**:
-    - **Linux / macOS**:
-      ```bash
-      python3 -m venv venv
-      source venv/bin/activate
-      ```
-    - **Windows (PowerShell)**:
-      ```powershell
-      python -m venv venv
-      .\venv\Scripts\Activate.ps1
-      ```
-
-3.  **Install**:
-    ```bash
-    pip install .
-    ```
-
-### ⚡ Quick Install (For Docker/Containers)
-If you are in a container or don't want a virtual environment:
-
-- **Standard**: `pip install git+https://github.com/mahupreti/repochat.git`
-- **Linux "Fix"**: If you get an *externally-managed-environment* error, use:
+**2. Virtual Environment (Optional but Recommended):**
+If you want to keep your system clean, create and activate a virtual environment first:
+- **Linux / macOS**:
   ```bash
-  pip install git+https://github.com/mahupreti/repochat.git --break-system-packages
+  python3 -m venv venv
+  source venv/bin/activate
   ```
+- **Windows (PowerShell)**:
+  ```powershell
+  python -m venv venv
+  .\venv\Scripts\Activate.ps1
+  ```
+
+**3. Install RepoChat:**
+```bash
+pip install .
+```
+
+---
+
+### ⚡ Quick Global Install
+If you just want to run the command without cloning the code:
+
+```bash
+pip install git+https://github.com/mahupreti/repochat.git
+```
+
+> **Note for Linux Users**: If you see an *externally-managed-environment* error (common on Ubuntu 23.04+ or Debian 12+), you can either use the [Virtual Environment](#-recommended-virtual-environment-works-everywhere) method above, or bypass the restriction with:
+> ```bash
+> pip install git+https://github.com/mahupreti/repochat.git --break-system-packages
+> ```
 
 ---
 
