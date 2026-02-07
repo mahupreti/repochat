@@ -17,40 +17,30 @@ Before running RepoChat, ensure you have the following installed on your machine
 2.  **Git**
 3.  **GitHub CLI (`gh`)**: [Install instructions](https://cli.github.com/)
     *   You must be logged in: `gh auth login`
-    *   You must have a valid GitHub Copilot subscription.
-    *   **Crucial Step**: Install the Copilot extension for CLI:
+    *   **Copilot Access**: You need access to GitHub Copilot CLI. (Note: You don't necessarily need a paid "Pro" subscription; the **free GitHub Copilot CLI** access via trials, student packs, or organization seats works perfectly!)
+    *   **Install the extension**:
         ```bash
         gh extension install github/gh-copilot
         ```
 
 ## Installation
 
-Follow these steps to set up RepoChat:
+To run `repochat` globally as a CLI tool on any machine:
 
-1.  **Clone the repository**:
+1.  **Clone and Enter**:
     ```bash
     git clone https://github.com/mahupreti/repochat.git
     cd repochat
     ```
 
-2.  **Create and activate a virtual environment** (Recommended):
+2.  **Install the tool**:
+    You can install it directly so the `repochat` command is available everywhere in your terminal:
     ```bash
-    # Create venv
-    python3 -m venv repochat-venv
-
-    # Activate (Linux/macOS)
-    source repochat-venv/bin/activate
-
-    # Activate (Windows)
-    # repochat-venv\Scripts\activate
+    pip install .
     ```
+    *(Note: Using a virtual environment is still recommended to keep your system clean, but `pip install .` will register the `repochat` command for you.)*
 
-3.  **Install the package**:
-    ```bash
-    pip install -e .
-    ```
-
-4.  **Verify Installation**:
+3.  **Verify**:
     ```bash
     repochat --help
     ```
