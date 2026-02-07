@@ -25,7 +25,18 @@ Before running RepoChat, ensure you have the following installed on your machine
 
 ## Installation
 
-To run `repochat` globally as a CLI tool on any machine:
+### 🚀 One-Command Quick Start (Recommended)
+If you already have Python and `pip` installed, you can skip cloning and install RepoChat directly from GitHub in one go:
+
+```bash
+pip install git+https://github.com/mahupreti/repochat.git
+```
+*This handles everything and makes the `repochat` command available immediately!*
+
+---
+
+### Alternative: Standard Installation (For Developers)
+If you want to modify the code, follow these steps:
 
 1.  **Clone and Enter**:
     ```bash
