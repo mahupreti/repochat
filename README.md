@@ -11,6 +11,7 @@ RepoChat is a powerful command-line tool that allows you to chat with any GitHub
 -   **🐳 Docker Ready**: Get started in seconds with a pre-configured container.
 -   **🐧 Cross-Platform**: Full support for Windows (PowerShell), macOS, and Linux.
 -   **💾 Local Indexing**: Fast retrieval using a local SQLite database.
+-   **🔄 Multi-Language Conversion**: Ask it to translate code logic from one language to another (e.g., Python to JavaScript) with full context.
 
 ---
 
@@ -111,6 +112,7 @@ repochat chat repository-name
 ### 💡 Example Questions
 - "Explain the project structure."
 - "How does the indexing logic work?"
+- "Convert the `auth_service.py` logic into a Node.js Express middleware."
 - "Where is the main entry point for the API?"
 - "Write a unit test for the database service."
 
@@ -118,7 +120,7 @@ repochat chat repository-name
 
 ## 🔧 Troubleshooting
 
--   **"Copilot CLI not installed"**: Ensure you ran `gh extension install github/gh-copilot` and `gh auth login`.
+-   **"Copilot CLI not installed"**: Ensure you ran `gh extension install github/gh-copilot` and `gh auth login` and `gh copilot`.
 -   **"Repository not found"**: Ensure you ran the `index` command first.
 -   **Permission Errors**: On Linux, ensure you have the necessary `python3-venv` package or use the Docker method.
 
