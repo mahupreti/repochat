@@ -11,26 +11,23 @@ RepoChat is a command-line tool that allows you to chat with any GitHub reposito
 
 ## Prerequisites
 
-Before running RepoChat, ensure your machine meets these requirements:
+Ensure you have these installed on your machine:
 
-1.  **Python 3.10** or higher
+1.  **Python 3.10+** (Ensure it's added to your PATH)
 2.  **Git**
-3.  **GitHub CLI (`gh`)**: [Install here](https://cli.github.com/)
+3.  **GitHub CLI (`gh`)**: [Download here](https://cli.github.com/)
     *   **Login**: `gh auth login`
-    *   **Copilot Extension**: `gh extension install github/gh-copilot`
-    *   *(Note: Any Copilot access works—Trials, Student Packs, or Pro!)*
+    *   **Install Copilot Extension**: `gh extension install github/gh-copilot`
+    *   *(Note: Any Copilot access works - Free, Student, or Pro!)*
+
+---
 
 ## Installation
 
-### 🚀 Direct Installation (Simpler)
-You can install RepoChat directly from GitHub. This registers the `repochat` command globally:
+Choose the method that fits your environment:
 
-```bash
-pip install git+https://github.com/mahupreti/repochat.git
-```
-
-### 🛠️ Developer Setup (Local Clone)
-If you want to view or modify the code:
+### 🚀 Recommended: Virtual Environment (Works Everywhere)
+This is the safest method for **Windows, macOS, and Linux**. It avoids conflicts and the "externally-managed-environment" error on modern Linux.
 
 1.  **Clone the Repo**:
     ```bash
@@ -38,10 +35,31 @@ If you want to view or modify the code:
     cd repochat
     ```
 
-2.  **Install Locally**:
+2.  **Activate Environment**:
+    - **Linux / macOS**:
+      ```bash
+      python3 -m venv venv
+      source venv/bin/activate
+      ```
+    - **Windows (PowerShell)**:
+      ```powershell
+      python -m venv venv
+      .\venv\Scripts\Activate.ps1
+      ```
+
+3.  **Install**:
     ```bash
     pip install .
     ```
+
+### ⚡ Quick Install (For Docker/Containers)
+If you are in a container or don't want a virtual environment:
+
+- **Standard**: `pip install git+https://github.com/mahupreti/repochat.git`
+- **Linux "Fix"**: If you get an *externally-managed-environment* error, use:
+  ```bash
+  pip install git+https://github.com/mahupreti/repochat.git --break-system-packages
+  ```
 
 ---
 
