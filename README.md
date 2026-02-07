@@ -25,8 +25,21 @@ Before running RepoChat, ensure you have the following installed on your machine
 
 ## Installation
 
-### 🚀 One-Command Quick Start (Recommended)
-If you already have Python and `pip` installed, you can skip cloning and install RepoChat directly from GitHub in one go:
+### 🛠️ The Professional Way: `pipx` (Cleanest)
+If you want to keep your system clean and avoid dependency conflicts, use `pipx`. This is the standard way to install CLI tools like this:
+
+```bash
+# Install pipx if you don't have it
+# brew install pipx (macOS) or sudo apt install pipx (Linux)
+
+pipx install git+https://github.com/mahupreti/repochat.git
+```
+*This installs RepoChat in its own isolated environment and puts the `repochat` command in your PATH automatically.*
+
+---
+
+### 🚀 One-Command Quick Start
+For a quick install using standard `pip`:
 
 ```bash
 pip install git+https://github.com/mahupreti/repochat.git
