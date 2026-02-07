@@ -24,7 +24,9 @@ Ensure you have these installed on your machine:
 
 ## Installation
 
-### 🚀 Recommended: Setup on a New Machine
+### 🚀 Recommended: Setup with docker 
+
+
 
 **1. Clone the repository:**
 ```bash
