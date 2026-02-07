@@ -24,15 +24,35 @@ Ensure you have these installed on your machine:
 
 ## Installation
 
-### 🚀 Recommended: Setup with docker 
+### 🐳 Option 1 (BEST): Build your own Docker image
+This is what you want if you want a perfect, isolated environment with everything pre-installed.
 
-
-
-**1. Clone the repository:**
+**1. Build the image:**
 ```bash
-git clone https://github.com/mahupreti/repochat.git
-cd repochat
+docker build -t repochat-dev .
 ```
+
+**2. Run it (interactive):**
+```bash
+docker run -it --rm repochat-dev
+```
+
+**You now have:**
+- Python + pip ✅
+- Git ✅
+- GitHub CLI (gh) ✅
+- Copilot CLI (gh copilot) ✅
+- repochat installed ✅
+
+---
+
+### 🚀 Option 2: Local Installation (Manual)
+
+**1. Clone and Enter**:
+    ```bash
+    git clone https://github.com/mahupreti/repochat.git
+    cd repochat
+    ```
 
 **2. Virtual Environment (Optional but Recommended):**
 If you want to keep your system clean, create and activate a virtual environment first:
