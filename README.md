@@ -11,68 +11,44 @@ RepoChat is a command-line tool that allows you to chat with any GitHub reposito
 
 ## Prerequisites
 
-Before running RepoChat, ensure you have the following installed on your machine:
+Before running RepoChat, ensure your machine meets these requirements:
 
 1.  **Python 3.10** or higher
 2.  **Git**
-3.  **GitHub CLI (`gh`)**: [Install instructions](https://cli.github.com/)
-    *   You must be logged in: `gh auth login`
-    *   **Copilot Access**: You need access to GitHub Copilot CLI. (Note: You don't necessarily need a paid "Pro" subscription; the **free GitHub Copilot CLI** access via trials, student packs, or organization seats works perfectly!)
-    *   **Install the extension**:
-        ```bash
-        gh extension install github/gh-copilot
-        ```
+3.  **GitHub CLI (`gh`)**: [Install here](https://cli.github.com/)
+    *   **Login**: `gh auth login`
+    *   **Copilot Extension**: `gh extension install github/gh-copilot`
+    *   *(Note: Any Copilot access works—Trials, Student Packs, or Pro!)*
 
 ## Installation
 
-### 🛠️ The Professional Way: `pipx` (Cleanest)
-If you want to keep your system clean and avoid dependency conflicts, use `pipx`. This is the standard way to install CLI tools like this:
-
-```bash
-# Install pipx if you don't have it
-# brew install pipx (macOS) or sudo apt install pipx (Linux)
-
-pipx install git+https://github.com/mahupreti/repochat.git
-```
-*This installs RepoChat in its own isolated environment and puts the `repochat` command in your PATH automatically.*
-
----
-
-### 🚀 One-Command Quick Start
-For a quick install using standard `pip`:
+### 🚀 Direct Installation (Simpler)
+You can install RepoChat directly from GitHub. This registers the `repochat` command globally:
 
 ```bash
 pip install git+https://github.com/mahupreti/repochat.git
 ```
-*This handles everything and makes the `repochat` command available immediately!*
 
----
+### 🛠️ Developer Setup (Local Clone)
+If you want to view or modify the code:
 
-### Alternative: Standard Installation (For Developers)
-If you want to modify the code, follow these steps:
-
-1.  **Clone and Enter**:
+1.  **Clone the Repo**:
     ```bash
     git clone https://github.com/mahupreti/repochat.git
     cd repochat
     ```
 
-2.  **Install the tool**:
-    You can install it directly so the `repochat` command is available everywhere in your terminal:
+2.  **Install Locally**:
     ```bash
     pip install .
     ```
-    *(Note: Using a virtual environment is still recommended to keep your system clean, but `pip install .` will register the `repochat` command for you.)*
 
-3.  **Verify**:
-    ```bash
-    repochat --help
-    ```
+---
 
 ## Usage
 
 ### 1. Index a Repository
-First, you need to index the repository you want to chat with. This downloads and processes the code.
+First, you need to index the repository you want to chat with.
 
 ```bash
 repochat index https://github.com/username/repository-name
