@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+repochat-venv/
+.env
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Repochat specific
+.repochat/
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary/Test files
+repro_*.py
+verify_*.py
+check_*.py
+temp_*.py
