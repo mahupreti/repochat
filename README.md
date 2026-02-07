@@ -13,7 +13,7 @@ RepoChat is a command-line tool that allows you to chat with any GitHub reposito
 
 Ensure you have these installed on your machine:
 
-1.  **Python 3.10+** (Ensure it's added to your PATH)
+1.  **Python 3.10+** (On Linux, you may need to install `python3-venv` if it's missing: `sudo apt install python3-venv`)
 2.  **Git**
 3.  **GitHub CLI (`gh`)**: [Download here](https://cli.github.com/)
     *   **Login**: `gh auth login`
