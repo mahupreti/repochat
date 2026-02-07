@@ -8,10 +8,12 @@
 RepoChat is a command-line tool designed to bridge the gap between a massive codebase and the specialized knowledge of GitHub Copilot. While standard Copilot chat is excellent for the active file, RepoChat allows you to index **any public GitHub repository** and ask high-level questions across the entire project structure.
 
 ### Key Highlights:
--   **🔍 Deep Context**: It doesn't just look at one file; it understands your entire project's structure.
--   **🔄 Code Conversion**: Translate entire logic blocks between languages (e.g., Python to JavaScript) with full context.
--   **🐳 Docker Ready**: A pre-configured environment ensures it works out-of-the-box for everyone.
--   **🐧 Cross-Platform**: Optimized for Windows (PowerShell), macOS, and Linux.
+-   **🔍 Deep Context**: Indexes the whole repository, not just one file.
+-   **🧠 Powered by Copilot**: Leverages the official GitHub Copilot CLI for high-quality code analysis.
+-   **🐳 Docker Ready**: Get started in seconds with a pre-configured container.
+-   **🐧 Cross-Platform**: Full support for Windows (PowerShell), macOS, and Linux.
+-   **💾 Local Indexing**: Fast retrieval using a local SQLite database.
+-   **🔄 Multi-Language Conversion**: Ask it to translate code logic from one language to another (e.g., Python to JavaScript) with full context.
 
 ---
 
