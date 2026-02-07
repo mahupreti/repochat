@@ -1,71 +1,62 @@
-# RepoChat
+# RepoChat 🤖⚖️
 
-RepoChat is a command-line tool that allows you to chat with any GitHub repository using AI. It indexes the repository codebase and uses GitHub Copilot to answer your questions with full context of the project.
+RepoChat is a powerful command-line tool that allows you to chat with any GitHub repository using AI. It indexes the entire codebase locally and uses GitHub Copilot to provide expert answers with full project context.
 
-## Features
+---
 
--   **Chat with any Repo**: Index and query any public GitHub repository.
--   **Context-Aware AI**: Uses GitHub Copilot to understand the codebase structure and logic.
--   **Conversational Interface**: Natural language interaction for questions like "How do I run this?" or "Explain the authentication flow."
--   **Local Indexing**: Repository data is indexed locally for fast access.
+## 🌟 Features
 
-## Prerequisites
+-   **🔍 Deep Context**: Indexes the whole repository, not just one file.
+-   **🧠 Powered by Copilot**: Leverages the official GitHub Copilot CLI for high-quality code analysis.
+-   **🐳 Docker Ready**: Get started in seconds with a pre-configured container.
+-   **🐧 Cross-Platform**: Full support for Windows (PowerShell), macOS, and Linux.
+-   **💾 Local Indexing**: Fast retrieval using a local SQLite database.
+
+---
+
+## 🛠️ Prerequisites
 
 Ensure you have these installed on your machine:
 
-1.  **Python 3.10+** (On Linux, you may need to install `python3-venv` if it's missing: `sudo apt install python3-venv`)
+1.  **Python 3.10+** (On Linux, install `python3-venv` if needed: `sudo apt install python3-venv`)
 2.  **Git**
 3.  **GitHub CLI (`gh`)**: [Download here](https://cli.github.com/)
     *   **Login**: `gh auth login`
-    *   **Install Copilot Extension**: `gh extension install github/gh-copilot`
-    *   *(Note: Any Copilot access works - Free, Student, or Pro!)*
+    *   **Install Copilot Extension**: Run the following command:
+        ```bash
+        gh extension install github/gh-copilot
+        ```
+    *   **Finalize Copilot Setup**: After installation, run `gh copilot` once. It will download the CLI and may ask for additional configurations.
+        > **Tip**: Once the CLI download is complete, you can simply press **`Esc`** to cancel any interactive prompts and start using RepoChat!
 
 ---
 
-## Installation
+## 🚀 Installation
 
-### 🐳 Option 1 (BEST): Build your own Docker image
-This is what you want if you want a perfect, isolated environment with everything pre-installed.
+### Option 1 (BEST): Docker 🐳
+For a perfect, isolated environment with everything pre-configured.
 
-**1. Build the image:**
+**1. Build and Run:**
 ```bash
 docker build -t repochat-dev .
-```
-
-**2. Run it (interactive):**
-```bash
 docker run -it --rm repochat-dev
 ```
 
-**You now have:**
-- Python + pip ✅
-- Git ✅
-- GitHub CLI (gh) ✅
-- Copilot CLI (gh copilot) ✅
-- repochat installed ✅
+**You get:** Python, Git, `gh` CLI, Copilot extension, and `repochat` ready to go! ✅
 
 ---
 
-### 🚀 Option 2: Local Installation (Manual)
+### Option 2: Local Setup (Manual) 💻
 
-**1. Clone and Enter**:
-    ```bash
-    git clone https://github.com/mahupreti/repochat.git
-    cd repochat
-    ```
+**1. Clone and Enter:**
+```bash
+git clone https://github.com/mahupreti/repochat.git
+cd repochat
+```
 
-**2. Virtual Environment (Optional but Recommended):**
-If you want to keep your system clean, create and activate a virtual environment first:
-- **Linux / macOS**:
-  ```bash
-  python3 -m venv venv
-  source venv/bin/activate
-  ```
-- **Windows (PowerShell)**:
-  ```powershell
-  python -m venv venv
-  .\venv\Scripts\Activate.ps1
-  ```
+**2. Virtual Environment (Recommended):**
+- **Linux/macOS**: `python3 -m venv venv && source venv/bin/activate`
+- **Windows**: `python -m venv venv && .\venv\Scripts\Activate.ps1`
 
 **3. Install RepoChat:**
 ```bash
@@ -74,63 +65,50 @@ pip install .
 
 ---
 
-### ⚡ Quick Global Install
-If you just want to run the command without cloning the code:
+### Option 3: Quick Global Install ⚡
+Install directly from GitHub without cloning:
 
 ```bash
 pip install git+https://github.com/mahupreti/repochat.git
 ```
-
-> **Note for Linux Users**: If you see an *externally-managed-environment* error (common on Ubuntu 23.04+ or Debian 12+), you can either use the [Virtual Environment](#-recommended-virtual-environment-works-everywhere) method above, or bypass the restriction with:
-> ```bash
-> pip install git+https://github.com/mahupreti/repochat.git --break-system-packages
-> ```
+*(Linux users: If blocked by PEP 668, add `--break-system-packages`)*
 
 ---
 
-## Usage
+## 📖 Usage
 
 ### 1. Index a Repository
-First, you need to index the repository you want to chat with.
-
+Index any public repo to make it searchable. This processes the files and stores them locally.
 ```bash
 repochat index https://github.com/username/repository-name
 ```
-*Example:*
-```bash
-repochat index https://github.com/mahupreti/Kubernetes-study-material
-```
 
-### 2. Chat with the Repository
-Once indexed, start a chat session using the repository name (the last part of the URL).
-
+### 2. Chat with the Code
+Start an interactive chat session using the repository name.
 ```bash
 repochat chat repository-name
 ```
-*Example:*
-```bash
-repochat chat Kubernetes-study-material
-```
 
-### Example Questions
-- "How do I install the dependencies?"
-- "Explain the main logic in `app.py`."
-- "Where is the database configuration?"
-- "Write a unit test for the `login` function."
+### 💡 Example Questions
+- "Explain the project structure."
+- "How does the indexing logic work?"
+- "Where is the main entry point for the API?"
+- "Write a unit test for the database service."
 
-## Troubleshooting
+---
 
-### "Copilot CLI not installed"
-- **Error**: `gh: 'copilot' is not a known command` or similar.
-- **Fix**: Run `gh extension install github/gh-copilot` and ensure you are logged in with `gh auth login`.
+## 🔧 Troubleshooting
 
-### "Repository not found"
-- **Error**: The chat command complains that the repo doesn't exist.
-- **Fix**: Make sure you ran `repochat index <url>` first and that the name matches the one in the URL.
+-   **"Copilot CLI not installed"**: Ensure you ran `gh extension install github/gh-copilot` and `gh auth login`.
+-   **"Repository not found"**: Ensure you ran the `index` command first.
+-   **Permission Errors**: On Linux, ensure you have the necessary `python3-venv` package or use the Docker method.
 
-### "No module named 'repochat'"
-- **Error**: Command not found.
-- **Fix**: Ensure your virtual environment is active and you ran `pip install -e .`.
+---
 
-### SQL/Database Errors
-- **Fix**: Try re-indexing the repository if you suspect the index is corrupted: `repochat index <url>` (it will overwrite the existing index).
+## 👤 Author
+
+**Mahesh Upreti**
+- Email: [maheshupretiofficial@gmail.com](mailto:maheshupretiofficial@gmail.com)
+- GitHub: [@mahupreti](https://github.com/mahupreti)
+
+*This project is a submission for the [GitHub Copilot CLI Challenge](https://dev.to/challenges/github-2026-01-21)*
