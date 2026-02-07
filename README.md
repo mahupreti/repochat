@@ -57,7 +57,7 @@ gh auth login
 # 2. Initialize Copilot (Downloads the CLI - Press 'Esc' after download)
 gh copilot
 
-# 3. (Optional) Re-install RepoChat to use the current local code
+# 3. (Optional) Install package directly from the repository
 pip install git+https://github.com/mahupreti/repochat.git
 ```
 *(Now you are ready to index and chat!)*
