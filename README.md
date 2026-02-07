@@ -36,13 +36,30 @@ Ensure you have these installed on your machine:
 ### Option 1 (BEST): Docker 🐳
 For a perfect, isolated environment with everything pre-configured.
 
-**1. Build and Run:**
+**1. Build the image:**
 ```bash
-docker build -t repochat-dev .
-docker run -it --rm repochat-dev
+docker build -t repochat .
 ```
 
-**You get:** Python, Git, `gh` CLI, Copilot extension, and `repochat` ready to go! ✅
+**2. Run the container:**
+```bash
+docker run -it --rm repochat
+```
+
+**3. Setup inside the Container:**
+Once you are inside the container shell, you must initialize your GitHub session:
+
+```bash
+# 1. Login to GitHub
+gh auth login
+
+# 2. Initialize Copilot (Downloads the CLI - Press 'Esc' after download)
+gh copilot
+
+# 3. (Optional) Re-install RepoChat to use the current local code
+pip install .
+```
+*(Now you are ready to index and chat!)*
 
 ---
 
@@ -78,7 +95,9 @@ pip install git+https://github.com/mahupreti/repochat.git
 ## 📖 Usage
 
 ### 1. Index a Repository
-Index any public repo to make it searchable. This processes the files and stores them locally.
+Index any public repo to make it searchable. 
+> **Note**: Indexing happens only once per repository and may take a few seconds to a minute depending on the codebase size.
+
 ```bash
 repochat index https://github.com/username/repository-name
 ```
@@ -102,6 +121,13 @@ repochat chat repository-name
 -   **"Copilot CLI not installed"**: Ensure you ran `gh extension install github/gh-copilot` and `gh auth login`.
 -   **"Repository not found"**: Ensure you ran the `index` command first.
 -   **Permission Errors**: On Linux, ensure you have the necessary `python3-venv` package or use the Docker method.
+
+---
+
+## 🤝 Contributing & Issues
+
+Have suggestions or found a bug? 
+Please **[Raise an Issue](https://github.com/mahupreti/repochat/issues)** on GitHub. Your feedback helps make RepoChat better for everyone!
 
 ---
 
